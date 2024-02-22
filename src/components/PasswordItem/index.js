@@ -1,14 +1,10 @@
 import {Component} from 'react'
 import './index.css'
 
-// (
-//
-//               )
-
 class PasswordItem extends Component {
   render() {
-    const {passwordDetails, deletePassword} = this.props
-    const {id, website, username, password, showPassword} = passwordDetails
+    const {passwordDetails, deletePassword, showPasswordStatus} = this.props
+    const {id, website, username, password} = passwordDetails
     const initial = website ? website[0].toUpperCase() : ''
 
     const onDeletePassword = () => {
@@ -25,7 +21,7 @@ class PasswordItem extends Component {
             <p>{website}</p>
             <p>{username}</p>
             <p>
-              {showPassword ? (
+              {showPasswordStatus ? (
                 password
               ) : (
                 <img
